@@ -22,12 +22,11 @@ public class Main
 
 	public static void main(String[] args)
 	{
-		System.out.println("Hello world");
 		Main main = new Main();
-		MyVisual example = new MyVisual();
-		//main.startUI();		
+		//MyVisual example = new MyVisual();
+				
 		Audio1();	
-		example.
+		//main.startUI();;
 		
 	}
 }
