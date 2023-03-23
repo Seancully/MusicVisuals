@@ -5,10 +5,10 @@ import example.MyVisual;
 public class Timer {
     int start = 0;
     boolean running = false;
-    MyVisual sv;
-    //Audio1 sv;
+    MyVisual su;
+    Audio1 sv;
 
-    public Timer(MyVisual sv){
+    public Timer(Audio1 sv){
         this.sv = sv;
     }
 

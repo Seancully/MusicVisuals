@@ -1,6 +1,6 @@
 package ie.tudublin;
 
-import example.*;
+//import example.*;
 
 import ddf.minim.AudioBuffer;
 import ddf.minim.AudioInput;
@@ -13,14 +13,14 @@ public class Audio1 extends PApplet {
 	AudioPlayer ap;
 	AudioInput ai;
 	AudioBuffer ab;
-	//public Timer timer;
+	public Timer timer;
 
 	int mode = 0;
 
 	float y = 0;
 	float smoothedY = 0;
 	float smoothedAmplitude = 0;
-	int seconds = 0;
+	
 
 	public void keyPressed() {
 		if (key >= '0' && key <= '9') {
@@ -47,7 +47,7 @@ public class Audio1 extends PApplet {
 		// ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
 		// ab = ai.mix;
 
-		//timer = new Timer(this);
+		timer = new Timer(this);
 		// And comment the next two lines out
 		ap = minim.loadFile("Eyelar.mp3", 1024);
 		ap.play();
@@ -79,8 +79,9 @@ public class Audio1 extends PApplet {
 		float cx = width / 2;
 		float cy = height / 2;
 
-		//seconds = timer.seconds();
-		//timer.start();
+		timer.start();
+		int seconds = timer.seconds();
+		System.out.println(timer.seconds());
 		switch (mode) {
 			case (0):
 				background(0);
@@ -164,8 +165,8 @@ public class Audio1 extends PApplet {
 
 				// here is where the main eye is made too
 
-				colorMode(HSB);
-				background(0,0,255);
+				colorMode(RGB);
+				background(0,255,0);
 
 				float halfW = width / 2;
 				halfH = height / 2;
@@ -183,7 +184,8 @@ public class Audio1 extends PApplet {
 
 				// make background up in intensity depending on music
 				colour = smoothedAmplitude * 1500;
-				background(255, 255, 255);
+				//backgound colour
+				background(0, 0, 0);
 
 				// drawing the ring inside the eye
 				noFill();
@@ -215,7 +217,7 @@ public class Audio1 extends PApplet {
 					// the iris
 					float colors = map(i, 0, ab.size(), 0, 255);
 					radius = map(smoothedAmplitude, 0, 0.6f, width / 4, 500);
-					fill(colors, 255, 255);
+					fill(43, 178, 196);
 					circle(halfW, halfH, radius);
 
 					// draw the pupil for the eye
