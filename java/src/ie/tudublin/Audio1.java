@@ -20,7 +20,6 @@ public class Audio1 extends PApplet {
 	float y = 0;
 	float smoothedY = 0;
 	float smoothedAmplitude = 0;
-	
 
 	public void keyPressed() {
 		if (key >= '0' && key <= '9') {
@@ -37,8 +36,8 @@ public class Audio1 extends PApplet {
 	}
 
 	public void settings() {
-		size(1024, 1000, P3D);
-		// fullScreen(P3D, SPAN);
+		//size(1024, 1024, P3D);
+		fullScreen(P3D, SPAN);
 	}
 
 	public void setup() {
@@ -52,7 +51,7 @@ public class Audio1 extends PApplet {
 		ap = minim.loadFile("Eyelar.mp3", 1024);
 		ap.play();
 		ab = ap.mix;
-		colorMode(HSB);
+		// colorMode(HSB);
 
 		y = height / 2;
 		smoothedY = y;
@@ -60,6 +59,21 @@ public class Audio1 extends PApplet {
 	}
 
 	float off = 0;
+
+	void star(float x, float y, float radius1, float radius2, int npoints) {
+		float angle = TWO_PI / npoints;
+		float halfAngle = (float) (angle / 2.0);
+		beginShape();
+		for (float a = 0; a < TWO_PI; a += angle) {
+			float sx = x + cos(a) * radius2;
+			float sy = y + sin(a) * radius2;
+			vertex(sx, sy);
+			sx = x + cos(a + halfAngle) * radius1;
+			sy = y + sin(a + halfAngle) * radius1;
+			vertex(sx, sy);
+		}
+		endShape(CLOSE);
+	}
 
 	public void draw() {
 		// background(0);
@@ -95,7 +109,7 @@ public class Audio1 extends PApplet {
 				break;
 			case (1):
 				background(0);
-
+				colorMode(HSB);
 				for (int i = 0; i < ab.size(); i++) {
 					float c = map(ab.get(i), -1, 1, 0, 255);
 					// float c = map(i, 0, ab.size(), 0, 255);
@@ -125,7 +139,9 @@ public class Audio1 extends PApplet {
 				float r = map(smoothedAmplitude, 0, 0.5f, 100, 2000);
 				float c = map(smoothedAmplitude, 0, 0.5f, 0, 255);
 				stroke(c, 255, 255);
-				circle(cx, cy, r);
+				circle(cx, cy, r+(smoothedAmplitude-500));
+				circle(cx, cy, (r+150)+(smoothedAmplitude-500));
+				circle(cx, cy, (r-150)+(smoothedAmplitude-500));
 				break;
 
 			case 4:
@@ -159,14 +175,10 @@ public class Audio1 extends PApplet {
 				circle(cx, cy, radius);
 				break;
 			case 6:
-
-				//float rotate = 0;
-				//Boolean eyesClose = false;
-
 				// here is where the main eye is made too
 
-				colorMode(RGB);
-				background(0,255,0);
+				//colorMode(RGB);
+				background(0, 255, 0);
 
 				float halfW = width / 2;
 				halfH = height / 2;
@@ -184,7 +196,8 @@ public class Audio1 extends PApplet {
 
 				// make background up in intensity depending on music
 				colour = smoothedAmplitude * 1500;
-				//backgound colour
+
+				// backgound colour
 				background(0, 0, 0);
 
 				// drawing the ring inside the eye
@@ -212,12 +225,11 @@ public class Audio1 extends PApplet {
 
 				// create the iris
 				strokeWeight(10);
-				//float colors = map(smoothedAmplitude, 0, 0.5f, 0, 255);
+				// float colors = map(smoothedAmplitude, 0, 0.5f, 0, 255);
 				for (int i = 0; i < ab.size(); i++) {
 					// the iris
-					float colors = map(i, 0, ab.size(), 0, 255);
 					radius = map(smoothedAmplitude, 0, 0.6f, width / 4, 500);
-					fill(43, 178, 196);
+					fill(255, 255, 255);
 					circle(halfW, halfH, radius);
 
 					// draw the pupil for the eye
@@ -229,39 +241,36 @@ public class Audio1 extends PApplet {
 					circle(halfW, halfH, smoothedAmplitude);
 				}
 
-				// drawing the "tomoe"
-				/*fill(0);
-				stroke(0);
-				pushMatrix();
-				translate(halfW, halfH); // translate to center
-
-				rotate += amplitude / 0.7f;
-				rotate(rotate);
-
-				// radius for the tomoe
-				float radius3 = map(smoothedAmplitude, 0, 3, width / 60, 500);
-
-				// 3 'tomoe' made to spin around the center pupil
+				float colors = map(smoothedAmplitude, 0, 0.5f, 0, 255);
+				// drawing 3 random circles
+				strokeWeight(10);
 				for (int i = 0; i < 3; i++) {
-					rotate(TWO_PI / 3);
-					ellipse(halfW / 7.5f, halfH / 7.5f, radius3, radius3);
+					fill(0);
+					stroke(colors, random(255), random(255));
+					//circle(random(width), random(height), random(width));
+					star(random(width),random(height),30,70,5);
+					delay(10);
 				}
-				popMatrix();*/
 
 				break;
+			case 7:
+				colorMode(RGB);
+				background(0);
+				strokeWeight(10);
+				delay(100);
+				fill(0);
+				stroke(255, 255, 255);
+				circle(random(0, width), random(0, width), random(0, width));
+				delay(100);
+				fill(0);
+				stroke(219, 86, 42);
+				circle(random(0, width), random(0, width), random(0, width));
+				delay(100);
+				fill(0);
+				stroke(222, 194, 11);
+				circle(random(0, width), random(0, width), random(0, width));
+				break;
 		}
-		// break;
 
 	}
 }
-
-/*
- * fill(100, 255, 255);
- * 
- * circle(width / 2, halfH, smoothedAmplitude * 100);
- * 
- * circle(100, y, 50);
- * y += random(-10, 10);
- * smoothedY = lerp(smoothedY, y, 0.1f);
- * circle(200, smoothedY, 50);3
- */
