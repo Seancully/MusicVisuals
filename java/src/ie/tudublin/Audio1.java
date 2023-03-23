@@ -177,7 +177,7 @@ public class Audio1 extends PApplet {
 			case 6:
 				// here is where the main eye is made too
 
-				//colorMode(RGB);
+				colorMode(RGB);
 				background(0, 255, 0);
 
 				float halfW = width / 2;
@@ -212,7 +212,7 @@ public class Audio1 extends PApplet {
 					// puts the eye in the center of the screen
 					vertex(x1 + halfW, y1 + halfH);
 
-					stroke(139, 0, 0);
+					stroke(84, 143, 168);
 					strokeWeight(5);
 					// make the ring go crazy and randomly but still on sync to music
 					r = width / 9 + (smoothedAmplitude * random(10, 150) * 2);
@@ -235,40 +235,21 @@ public class Audio1 extends PApplet {
 					// draw the pupil for the eye
 					float radius2 = map(smoothedAmplitude * 1.5f, 0, 0.7f, width / 20, 500);
 					fill(0);
-					circle(halfW, halfH, radius2);
+					circle(halfW, halfH, radius2+125);
 
-					fill(255);
+					fill(0,0,255);
 					circle(halfW, halfH, smoothedAmplitude);
 				}
-
-				float colors = map(smoothedAmplitude, 0, 0.5f, 0, 255);
-				// drawing 3 random circles
+				// drawing 3 random stars
 				strokeWeight(10);
-				for (int i = 0; i < 3; i++) {
+				for (int i = 0; i < 6; i++) {
 					fill(0);
-					stroke(colors, random(255), random(255));
+					stroke(0);
 					//circle(random(width), random(height), random(width));
-					star(random(width),random(height),30,70,5);
+					star(random(width),random(height),10,19,5);
 					delay(10);
 				}
 
-				break;
-			case 7:
-				colorMode(RGB);
-				background(0);
-				strokeWeight(10);
-				delay(100);
-				fill(0);
-				stroke(255, 255, 255);
-				circle(random(0, width), random(0, width), random(0, width));
-				delay(100);
-				fill(0);
-				stroke(219, 86, 42);
-				circle(random(0, width), random(0, width), random(0, width));
-				delay(100);
-				fill(0);
-				stroke(222, 194, 11);
-				circle(random(0, width), random(0, width), random(0, width));
 				break;
 		}
 
