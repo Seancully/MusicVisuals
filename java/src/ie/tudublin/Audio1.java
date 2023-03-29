@@ -241,7 +241,7 @@ public class Audio1 extends PApplet {
 					circle(halfW, halfH, smoothedAmplitude);
 				}
 				// drawing 3 random stars
-				strokeWeight(10);
+				strokeWeight(2);
 				for (int i = 0; i < 6; i++) {
 					fill(0);
 					stroke(0);
