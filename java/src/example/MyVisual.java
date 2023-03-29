@@ -1,11 +1,14 @@
 package example;
 
+import c21718369.Sphere;
 import ie.tudublin.*;
 
 public class MyVisual extends Visual
 {    
     WaveForm wf;
     AudioBandsVisual abv;
+	public Object timer;
+    Sphere bx;
 
     public void settings()
     {
@@ -23,14 +26,15 @@ public class MyVisual extends Visual
         startMinim();
                 
         // Call loadAudio to load an audio file to process 
-        //loadAudio("heroplanet.mp3");   
+        loadAudio("Eyelar.mp3");   
 
         
         // Call this instead to read audio from the microphone
-        startListening(); 
+        //startListening(); 
         
         wf = new WaveForm(this);
         abv = new AudioBandsVisual(this);
+        bx=new Sphere(this);
     }
 
     public void keyPressed()
@@ -56,7 +60,7 @@ public class MyVisual extends Visual
         }
         // Call this is you want to use frequency bands
         calculateFrequencyBands(); 
-
+        bx.render();
         // Call this is you want to get the average amplitude
         calculateAverageAmplitude();        
         wf.render();
