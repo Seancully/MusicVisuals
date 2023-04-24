@@ -30,4 +30,7 @@ public class Timer {
     public int seconds(){
         return elapsedTime() / 1000;
     }
+
+    public void update() {
+    }
 }
