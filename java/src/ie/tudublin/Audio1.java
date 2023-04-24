@@ -96,7 +96,7 @@ public class Audio1 extends PApplet {
 
 		seconds = millis() / 1000.0f;
 		System.out.println(seconds);
-		if (seconds >= 2 && seconds < 6) {
+		if (seconds >= 2 && seconds < 4) {
 
 			background(0);
 			strokeWeight(1);
@@ -110,7 +110,7 @@ public class Audio1 extends PApplet {
 
 		}
 
-		else if (seconds >= 6 && seconds < 9) {
+		else if (seconds >= 4 && seconds < 8) {
 
 			background(0);
 			strokeWeight(1);
@@ -124,7 +124,7 @@ public class Audio1 extends PApplet {
 
 		}
 
-		else if (seconds >= 9 && seconds < 12) {
+		else if (seconds >= 8 && seconds < 10) {
 
 			background(0);
 			strokeWeight(1);
@@ -138,7 +138,7 @@ public class Audio1 extends PApplet {
 
 		}
 
-		else if (seconds >= 12 && seconds < 15) {
+		else if (seconds >= 10 && seconds < 12) {
 
 			background(0);
 			strokeWeight(1);
@@ -151,7 +151,7 @@ public class Audio1 extends PApplet {
 
 		}
 
-		else if (seconds >= 15 && seconds < 18) {
+		else if (seconds >= 12 && seconds < 14) {
 
 			background(0);
 			strokeWeight(1);
@@ -164,7 +164,7 @@ public class Audio1 extends PApplet {
 
 		}
 
-		else if (seconds >= 18 && seconds < 20) {
+		else if (seconds >= 14 && seconds < 16) {
 
 			background(0);
 			strokeWeight(1);
@@ -175,7 +175,7 @@ public class Audio1 extends PApplet {
 			textSize(200);
 			text("EYELAR", width / 2 - 350, height / 2 + 80);
 
-		} else if (seconds >= 20 && seconds < 25) {
+		} else if (seconds >= 16 && seconds < 21) {
 
 			background(0);
 			for (int i = 0; i < ab.size(); i++) {
@@ -185,10 +185,7 @@ public class Audio1 extends PApplet {
 				line(i, halfH + f, width, halfH);
 				line(i, halfH + f, width, halfH);
 			}
-		} else if (seconds >= 25 && seconds < 35) {
-		}
-
-		else if (seconds >= 35 && seconds < 45) {
+		} else if (seconds >= 21 && seconds < 31) {
 			background(0);
 			strokeWeight(2);
 			noFill();
@@ -220,9 +217,7 @@ public class Audio1 extends PApplet {
 
 		}
 
-		else if (seconds >= 45 && seconds < 48) {
-			background(0);
-		} else if (seconds >= 48) {
+		else if (seconds >= 31 && seconds < 41) {
 			// here is where the main eye is made too
 
 			colorMode(RGB);
@@ -289,6 +284,14 @@ public class Audio1 extends PApplet {
 				star(random(width), random(height), 10, 19, 5);
 				delay(10);
 			}
+		
 		}
+
+		else if (seconds >= 41 && seconds < 51) {
+			background(0);
+		} else if (seconds >= 51 && seconds <61) {
+			background(0);
+		}
+		
 	}
 }
