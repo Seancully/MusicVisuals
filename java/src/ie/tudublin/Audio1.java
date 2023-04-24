@@ -7,6 +7,8 @@ import ddf.minim.AudioInput;
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import processing.core.PApplet;
+import processing.core.PVector;
+
 import java.util.ArrayList;
 
 public class Audio1 extends PApplet {
@@ -23,9 +25,13 @@ public class Audio1 extends PApplet {
 	float smoothedY = 0;
 	float smoothedAmplitude = 0;
 	ArrayList<Star> stars = new ArrayList<Star>();
-    float speed;
-	
-	
+	float speed;
+
+	PVector[][] globe;
+	int r = 200;
+	int total = 25;
+	float angleX = 0;
+	float angleY = 0;
 
 	public void keyPressed() {
 		if (key >= '0' && key <= '9') {
@@ -45,7 +51,7 @@ public class Audio1 extends PApplet {
 	}
 
 	public void settings() {
-		//size(2560 ,1600);
+		// size(2560 ,1600);
 		fullScreen(P3D, SPAN);
 	}
 
@@ -62,9 +68,20 @@ public class Audio1 extends PApplet {
 		smoothedY = y;
 
 		for (int i = 0; i < 800; i++) {
-            stars.add(new Star());
-        }
+			stars.add(new Star());
+		}
 
+		globe = new PVector[total + 1][total + 1];
+		for (int i = 0; i < total + 1; i++) {
+			float lat = map(i, 0, total, 0, PI);
+			for (int j = 0; j < total + 1; j++) {
+				float lon = map(j, 0, total, 0, TWO_PI);
+				float x = r * sin(lat) * cos(lon);
+				float y = r * sin(lat) * sin(lon);
+				float z = r * cos(lat);
+				globe[i][j] = new PVector(x, y, z);
+			}
+		}
 
 	}
 
@@ -110,13 +127,12 @@ public class Audio1 extends PApplet {
 
 			speed = map(mouseX, 0, width, 0, 50);
 			background(0);
-			
+
 			for (int i = 0; i < stars.size(); i++) {
-			stars.get(i).update();
-			stars.get(i).show();
+				stars.get(i).update();
+				stars.get(i).show();
 			}
 
-			
 			strokeWeight(1);
 
 			rectMode(PApplet.CENTER);
@@ -131,14 +147,13 @@ public class Audio1 extends PApplet {
 
 			speed = map(mouseX, 0, width, 0, 50);
 			background(0);
-			
+
 			for (int i = 0; i < stars.size(); i++) {
-			stars.get(i).update();
-			stars.get(i).show();
+				stars.get(i).update();
+				stars.get(i).show();
 			}
 
 			strokeWeight(1);
-			
 
 			rectMode(PApplet.CENTER);
 
@@ -152,14 +167,13 @@ public class Audio1 extends PApplet {
 
 			speed = map(mouseX, 0, width, 0, 50);
 			background(0);
-			
+
 			for (int i = 0; i < stars.size(); i++) {
-			stars.get(i).update();
-			stars.get(i).show();
+				stars.get(i).update();
+				stars.get(i).show();
 			}
-			
+
 			strokeWeight(1);
-			
 
 			rectMode(PApplet.CENTER);
 
@@ -173,14 +187,13 @@ public class Audio1 extends PApplet {
 
 			speed = map(mouseX, 0, width, 0, 50);
 			background(0);
-			
+
 			for (int i = 0; i < stars.size(); i++) {
-			stars.get(i).update();
-			stars.get(i).show();
+				stars.get(i).update();
+				stars.get(i).show();
 			}
-			
+
 			strokeWeight(1);
-			
 
 			rectMode(PApplet.CENTER);
 			fill(59, 127, 245);
@@ -193,14 +206,13 @@ public class Audio1 extends PApplet {
 
 			speed = map(mouseX, 0, width, 0, 50);
 			background(0);
-			
+
 			for (int i = 0; i < stars.size(); i++) {
-			stars.get(i).update();
-			stars.get(i).show();
+				stars.get(i).update();
+				stars.get(i).show();
 			}
-			
+
 			strokeWeight(1);
-			
 
 			rectMode(PApplet.CENTER);
 			fill(14, 52, 117);
@@ -214,12 +226,11 @@ public class Audio1 extends PApplet {
 			speed = map(mouseX, 0, width, 0, 50);
 			background(0);
 			for (int i = 0; i < stars.size(); i++) {
-			stars.get(i).update();
-			stars.get(i).show();
+				stars.get(i).update();
+				stars.get(i).show();
 			}
-			
+
 			strokeWeight(1);
-			
 
 			rectMode(PApplet.CENTER);
 			fill(12, 98, 245);
@@ -228,14 +239,31 @@ public class Audio1 extends PApplet {
 
 		} else if (seconds >= 20 && seconds < 25) {
 
-			background(0);
-				
-		}
-		 else if (seconds >= 25 && seconds < 35) {
-			background(0);
+			background(51);
+			rotateX(angleX);
+			rotateY(angleY);
+
+			for (int i = 0; i < total; i++) {
+				beginShape(TRIANGLE_STRIP);
+				for (int j = 0; j < total + 1; j++) {
+					PVector v1 = globe[i][j];
+					//vertex(v1.x, v1.y, v1.z);
+					vertex(v1.x + halfW, v1.y + halfH, v1.z);
+					PVector v2 = globe[i + 1][j];
+					//vertex(v2.x, v2.y, v2.z);
+					vertex(v2.x +halfW, v2.y + halfH, v2.z);
+				}
+				endShape();
+			}
+
+			angleX += 0.005;
+			angleY += 0.006;
+
+		} else if (seconds >= 25 && seconds < 35) {
+
 		}
 
-		else if (seconds >= 35 && seconds < 39) {
+		else if (seconds >= 35 && seconds < 45) {
 			background(0);
 			strokeWeight(2);
 			noFill();
@@ -267,7 +295,9 @@ public class Audio1 extends PApplet {
 
 		}
 
-		else if (seconds >= 39 && seconds < 48) {
+		else if (seconds >= 45 && seconds < 48) {
+			background(0);
+		} else if (seconds >= 48) {
 			// here is where the main eye is made too
 
 			colorMode(RGB);
@@ -334,50 +364,49 @@ public class Audio1 extends PApplet {
 				star(random(width), random(height), 10, 19, 5);
 				delay(10);
 			}
-		} else if (seconds >= 48) {
-			
 		}
 	}
+
 	class Star {
-        float x;
-        float y;
-        float z;
-        float pz;
+		float x;
+		float y;
+		float z;
+		float pz;
 
-        Star() {
-            x = random(-width / 2, width / 2);
-            y = random(-height / 2, height / 2);
-            z = random(width / 2);
-            pz = z;
-        }
+		Star() {
+			x = random(-width / 2, width / 2);
+			y = random(-height / 2, height / 2);
+			z = random(width / 2);
+			pz = z;
+		}
 
-        void update() {
-            z = z - speed;
-            if (z < 1) {
-                z = width / 2;
-                x = random(-width / 2, width / 2);
-                y = random(-height / 2, height / 2);
-                pz = z;
-            }
-        }
+		void update() {
+			z = z - speed;
+			if (z < 1) {
+				z = width / 2;
+				x = random(-width / 2, width / 2);
+				y = random(-height / 2, height / 2);
+				pz = z;
+			}
+		}
 
-        void show() {
-            fill(255);
-            noStroke();
+		void show() {
+			fill(255);
+			noStroke();
 
-            float sx = map(x / z, 0, 1, 0, width);
-            float sy = map(y / z, 0, 1, 0, height);
+			float sx = map(x / z, 0, 1, 0, width);
+			float sy = map(y / z, 0, 1, 0, height);
 
-            float r = map(z, 0, width / 2, 8, 0);
-            ellipse(sx, sy, r, r);
+			float r = map(z, 0, width / 2, 8, 0);
+			ellipse(sx, sy, r, r);
 
-            float px = map(x / pz, 0, 1, 0, width);
-            float py = map(y / pz, 0, 1, 0, height);
+			float px = map(x / pz, 0, 1, 0, width);
+			float py = map(y / pz, 0, 1, 0, height);
 
-            stroke(255);
-            line(px, py, sx, sy);
+			stroke(255);
+			line(px, py, sx, sy);
 
-            pz = z;
-        }
-    }
+			pz = z;
+		}
+	}
 }
