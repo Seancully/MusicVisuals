@@ -4,6 +4,7 @@ package ie.tudublin;
 //import example.CubeVisual;
 import example.MyVisual;
 //import example.RotatingAudioBands;
+import c21718369.*;
 
 public class Main
 {	
@@ -20,6 +21,12 @@ public class Main
         processing.core.PApplet.runSketch( a, new Audio1());		
 	}
 
+	/*public void random()
+	{
+		String[] a={"MAIN"};
+		processing.core.PApplet.runSketch(a, random());
+	}*/
+
 	public static void main(String[] args)
 	{
 		Main main = new Main();
@@ -27,6 +34,7 @@ public class Main
 				
 		main.Audio1();	
 		//main.startUI();;
+	
 		
 	}
 }
