@@ -1,5 +1,8 @@
 package ie.tudublin;
 
+// Navy Blue		Blue Grotto			Blue Green			Baby Blue
+// (5, 68, 94)		(24, 154, 180)		(117, 230, 218)		(212, 241, 244)
+
 //import example.*;
 
 import ddf.minim.AudioBuffer;
@@ -20,6 +23,7 @@ public class Audio1 extends PApplet {
 
 	int mode = 0;
 	float seconds = 0;
+	float theta = 0;
 
 	float y = 0;
 	float smoothedY = 0;
@@ -123,9 +127,11 @@ public class Audio1 extends PApplet {
 
 		seconds = millis() / 1000.0f;
 		System.out.println(seconds);
+
+		// Intro
 		if (seconds >= 2 && seconds < 6) {
 
-			speed = map(mouseX, 0, width, 0, 50);
+			speed = map(50, 0, width, 0, 50);
 			background(0);
 
 			for (int i = 0; i < stars.size(); i++) {
@@ -145,7 +151,7 @@ public class Audio1 extends PApplet {
 
 		else if (seconds >= 6 && seconds < 9) {
 
-			speed = map(mouseX, 0, width, 0, 50);
+			speed = map(50, 0, width, 0, 50);
 			background(0);
 
 			for (int i = 0; i < stars.size(); i++) {
@@ -165,7 +171,7 @@ public class Audio1 extends PApplet {
 
 		else if (seconds >= 9 && seconds < 12) {
 
-			speed = map(mouseX, 0, width, 0, 50);
+			speed = map(50, 0, width, 0, 50);
 			background(0);
 
 			for (int i = 0; i < stars.size(); i++) {
@@ -185,7 +191,7 @@ public class Audio1 extends PApplet {
 
 		else if (seconds >= 12 && seconds < 15) {
 
-			speed = map(mouseX, 0, width, 0, 50);
+			speed = map(50, 0, width, 0, 50);
 			background(0);
 
 			for (int i = 0; i < stars.size(); i++) {
@@ -204,7 +210,7 @@ public class Audio1 extends PApplet {
 
 		else if (seconds >= 15 && seconds < 18) {
 
-			speed = map(mouseX, 0, width, 0, 50);
+			speed = map(50, 0, width, 0, 50);
 			background(0);
 
 			for (int i = 0; i < stars.size(); i++) {
@@ -220,10 +226,10 @@ public class Audio1 extends PApplet {
 			text("EYELA", width / 2 - 350, height / 2 + 80);
 
 		}
-
+		// End Intro
 		else if (seconds >= 18 && seconds < 20) {
 
-			speed = map(mouseX, 0, width, 0, 50);
+			speed = map(50, 0, width, 0, 50);
 			background(0);
 			for (int i = 0; i < stars.size(); i++) {
 				stars.get(i).update();
@@ -237,32 +243,82 @@ public class Audio1 extends PApplet {
 			textSize(200);
 			text("EYELAR", width / 2 - 350, height / 2 + 80);
 
-		} else if (seconds >= 20 && seconds < 25) {
+			// Solar System
+		} else if (seconds >= 20 && seconds < 35) {
+			float r = map(smoothedAmplitude, 0, 0.5f, 100, 2000);
+			background(0);
+			stroke(0);
+			speed = map(80, 0, width, 0, 50);
 
-			background(51);
-			rotateX(angleX);
-			rotateY(angleY);
-
-			for (int i = 0; i < total; i++) {
-				beginShape(TRIANGLE_STRIP);
-				for (int j = 0; j < total + 1; j++) {
-					PVector v1 = globe[i][j];
-					//vertex(v1.x, v1.y, v1.z);
-					vertex(v1.x + halfW, v1.y + halfH, v1.z);
-					PVector v2 = globe[i + 1][j];
-					//vertex(v2.x, v2.y, v2.z);
-					vertex(v2.x +halfW, v2.y + halfH, v2.z);
-				}
-				endShape();
+			for (int i = 0; i < stars.size(); i++) {
+				stars.get(i).update();
+				stars.get(i).show();
 			}
 
-			angleX += 0.005;
-			angleY += 0.006;
+			// use a bezeier as a shooting star that gradually fades with a star
+			strokeWeight(1);
+			stroke(255, 255, 255, 255);
+			bezier(0, 0, random(0, width), random(0, height), random(0, width), random(0, height), width, height);
 
-		} else if (seconds >= 25 && seconds < 35) {
+			// The sun
 
-		}
+			// Translate to center of window to draw the sun.
+			translate(width / 2, height / 2);
+			fill(84, 143, 168);
+			ellipse(0, 0, 320, 320);
+			fill(0);
+			ellipse(0, 0, ((r + 150) + (smoothedAmplitude - 500)) / 2, ((r + 150) + (smoothedAmplitude - 500)) / 2);
 
+			// The earth rotates around the sun
+			pushMatrix();
+			rotate(theta);
+			translate(250, 0);
+			fill(5, 68, 94);
+			ellipse(0, 0, 160, 160);
+
+			// Moon #1 rotates around the earth
+			// pushMatrix() is called to save the transformation state before drawing moon
+			// #1.
+			// This way we can pop and return to earth before drawing moon #2.
+			// Both moons rotate around the earth (which itself is rotating around the sun).
+			// pushMatrix();
+			rotate(-theta * 4);
+			translate(150, 0);
+			fill(24, 154, 180);
+			ellipse(0, 0, 60, 60);
+			// popMatrix();
+
+			// Moon #2 also rotates around the earth
+			// pushMatrix();
+			rotate(theta * 2);
+			translate(100, 0);
+			fill(212, 241, 244);
+			ellipse(0, 0, 30, 30);
+			// popMatrix();
+
+			// pushMatrix();
+			rotate(-theta * 4);
+			translate(230, 0);
+			fill(50, 255, 200);
+			ellipse(0, 0, 45, 45);
+			// popMatrix();
+
+			// pushMatrix();
+			rotate(-theta * 4);
+			translate(285, 0);
+			fill(117, 230, 218);
+			ellipse(0, 0, 90, 90);
+			// popMatrix();
+
+			popMatrix();
+
+			theta += 0.01;
+
+		} // else if (seconds >= 25 && seconds < 35) {
+
+		// }
+
+		// Horizon vertex animation
 		else if (seconds >= 35 && seconds < 45) {
 			background(0);
 			strokeWeight(2);
@@ -297,7 +353,10 @@ public class Audio1 extends PApplet {
 
 		else if (seconds >= 45 && seconds < 48) {
 			background(0);
-		} else if (seconds >= 48) {
+		}
+
+		// eye animation
+		else if (seconds >= 48) {
 			// here is where the main eye is made too
 
 			colorMode(RGB);
@@ -367,46 +426,45 @@ public class Audio1 extends PApplet {
 		}
 	}
 
-	class Star {
-		float x;
-		float y;
-		float z;
-		float pz;
+class Star {
+	float x;
+	float y;
+	float z;
+	float pz;
 
-		Star() {
+	Star() {
+		x = random(-width / 2, width / 2);
+		y = random(-height / 2, height / 2);
+		z = random(width / 2);
+		pz = z;
+	}
+
+	void update() {
+		z = z - speed;
+		if (z < 1) {
+			z = width / 2;
 			x = random(-width / 2, width / 2);
 			y = random(-height / 2, height / 2);
-			z = random(width / 2);
-			pz = z;
-		}
-
-		void update() {
-			z = z - speed;
-			if (z < 1) {
-				z = width / 2;
-				x = random(-width / 2, width / 2);
-				y = random(-height / 2, height / 2);
-				pz = z;
-			}
-		}
-
-		void show() {
-			fill(255);
-			noStroke();
-
-			float sx = map(x / z, 0, 1, 0, width);
-			float sy = map(y / z, 0, 1, 0, height);
-
-			float r = map(z, 0, width / 2, 8, 0);
-			ellipse(sx, sy, r, r);
-
-			float px = map(x / pz, 0, 1, 0, width);
-			float py = map(y / pz, 0, 1, 0, height);
-
-			stroke(255);
-			line(px, py, sx, sy);
-
 			pz = z;
 		}
 	}
-}
+
+	void show() {
+		fill(255);
+		noStroke();
+
+		float sx = map(x / z, 0, 1, 0, width);
+		float sy = map(y / z, 0, 1, 0, height);
+
+		float r = map(z, 0, width / 2, 8, 0);
+		ellipse(sx, sy, r, r);
+
+		float px = map(x / pz, 0, 1, 0, width);
+		float py = map(y / pz, 0, 1, 0, height);
+
+		stroke(255);
+		line(px, py, sx, sy);
+
+		pz = z;
+	}
+}}
