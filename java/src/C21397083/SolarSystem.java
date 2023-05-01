@@ -35,7 +35,7 @@ public class SolarSystem extends PApplet {
     }
 
     public void render() {
-        float r = map(a1.getsmoothedAmplitude(), 0, 0.5f, 100, 2000);
+        float r = map(a1.getSmoothedAmplitude(), 0, 0.5f, 100, 2000);
 			a1.background(0);
 			a1.stroke(0);
 			speed = map(80, 0, a1.width, 0, 50);
@@ -49,7 +49,7 @@ public class SolarSystem extends PApplet {
 			a1.fill(84, 143, 168);
 			a1.ellipse(0, 0, 320, 320);
 			a1.fill(0);
-			a1.ellipse(0, 0, ((r + 150) + (a1.getsmoothedAmplitude() - 500)) / 2, ((r + 150) + (smoothedAmplitude - 500)) / 2);
+			a1.ellipse(0, 0, ((r + 150) + (a1.getSmoothedAmplitude() - 500)) / 2, ((r + 150) + (smoothedAmplitude - 500)) / 2);
 
 
 			a1.pushMatrix();
