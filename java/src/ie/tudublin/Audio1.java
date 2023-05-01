@@ -56,7 +56,7 @@ public class Audio1 extends PApplet {
 
 	public void settings() {
 		// size(2560 ,1600);
-		fullScreen(P3D, SPAN);
+		fullScreen(P3D);
 	}
 
 	public void setup() {
@@ -255,13 +255,7 @@ public class Audio1 extends PApplet {
 				stars.get(i).show();
 			}
 
-			// use a bezeier as a shooting star that gradually fades with a star
-			strokeWeight(1);
-			stroke(255, 255, 255, 255);
-			bezier(0, 0, random(0, width), random(0, height), random(0, width), random(0, height), width, height);
-
-			// The sun
-
+			
 			// Translate to center of window to draw the sun.
 			translate(width / 2, height / 2);
 			fill(84, 143, 168);
