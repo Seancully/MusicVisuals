@@ -1,11 +1,9 @@
 package ie.tudublin;
 
-import example.MyVisual;
 
 public class Timer {
     int start = 0;
     boolean running = false;
-    MyVisual su;
     Audio1 sv;
 
     public Timer(Audio1 sv){
