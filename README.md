@@ -17,7 +17,7 @@ Our groups Music Visualizer compiles a montage of different visuals all inspired
 
 # Instructions
 press fn + f5 and watch the code on VSC, also press spacebar and it begins.
-or watch it here on Youtube: [![YouTube]()]([https://www.youtube.com/watch?v=J2kHSSFA4NU](https://youtu.be/dfZdfHreKV8))
+or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 
 # How it works
 ### Timer
