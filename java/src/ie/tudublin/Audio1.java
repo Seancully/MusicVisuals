@@ -255,7 +255,6 @@ public class Audio1 extends Visual {
 				stars.get(i).show();
 			}
 
-			
 			// Translate to center of window to draw the sun.
 			translate(width / 2, height / 2);
 			fill(84, 143, 168);
@@ -278,6 +277,8 @@ public class Audio1 extends Visual {
 			// pushMatrix();
 			rotate(-theta * 4);
 			translate(150, 0);
+			fill(212, 241, 244);
+			ellipse(-40, -40, 40, 40);
 			fill(24, 154, 180);
 			ellipse(0, 0, 60, 60);
 			// popMatrix();
@@ -286,6 +287,8 @@ public class Audio1 extends Visual {
 			// pushMatrix();
 			rotate(theta * 2);
 			translate(100, 0);
+			fill(50, 255, 200);
+			ellipse(-30, 30, 15, 15);
 			fill(212, 241, 244);
 			ellipse(0, 0, 30, 30);
 			// popMatrix();
@@ -293,6 +296,8 @@ public class Audio1 extends Visual {
 			// pushMatrix();
 			rotate(-theta * 4);
 			translate(230, 0);
+			fill(212, 241, 244);
+			ellipse(-55, 55, 30, 30);
 			fill(50, 255, 200);
 			ellipse(0, 0, 45, 45);
 			// popMatrix();
@@ -300,6 +305,8 @@ public class Audio1 extends Visual {
 			// pushMatrix();
 			rotate(-theta * 4);
 			translate(285, 0);
+			fill(212, 241, 244);
+			ellipse(-65, 65, 55, 55);
 			fill(117, 230, 218);
 			ellipse(0, 0, 90, 90);
 			// popMatrix();
@@ -315,6 +322,15 @@ public class Audio1 extends Visual {
 		// Horizon vertex animation
 		else if (seconds >= 35 && seconds < 45) {
 			background(0);
+
+			// stars
+			speed = map(50, 0, width, 0, 50);
+			background(0);
+
+			for (int i = 0; i < stars.size(); i++) {
+				stars.get(i).update();
+				stars.get(i).show();
+			}
 			strokeWeight(2);
 			noFill();
 			beginShape();
@@ -338,6 +354,7 @@ public class Audio1 extends Visual {
 			endShape(CLOSE);
 
 			float r = map(smoothedAmplitude, 0, 0.5f, 100, 2000);
+
 			stroke(84, 143, 168);
 			circle(cx, cy, r + (smoothedAmplitude - 500));
 			circle(cx, cy, (r + 150) + (smoothedAmplitude - 500));
@@ -371,6 +388,15 @@ public class Audio1 extends Visual {
 
 			// backgound colour
 			background(0, 0, 0);
+
+			// stars
+			speed = map(50, 0, width, 0, 50);
+			background(0);
+
+			for (int i = 0; i < stars.size(); i++) {
+				stars.get(i).update();
+				stars.get(i).show();
+			}
 
 			// drawing the ring inside the eye
 			noFill();
@@ -420,45 +446,46 @@ public class Audio1 extends Visual {
 		}
 	}
 
-class Star {
-	float x;
-	float y;
-	float z;
-	float pz;
+	class Star {
+		float x;
+		float y;
+		float z;
+		float pz;
 
-	Star() {
-		x = random(-width / 2, width / 2);
-		y = random(-height / 2, height / 2);
-		z = random(width / 2);
-		pz = z;
-	}
-
-	void update() {
-		z = z - speed;
-		if (z < 1) {
-			z = width / 2;
+		Star() {
 			x = random(-width / 2, width / 2);
 			y = random(-height / 2, height / 2);
+			z = random(width / 2);
+			pz = z;
+		}
+
+		void update() {
+			z = z - speed;
+			if (z < 1) {
+				z = width / 2;
+				x = random(-width / 2, width / 2);
+				y = random(-height / 2, height / 2);
+				pz = z;
+			}
+		}
+
+		void show() {
+			fill(255);
+			noStroke();
+
+			float sx = map(x / z, 0, 1, 0, width);
+			float sy = map(y / z, 0, 1, 0, height);
+
+			float r = map(z, 0, width / 2, 8, 0);
+			ellipse(sx, sy, r, r);
+
+			float px = map(x / pz, 0, 1, 0, width);
+			float py = map(y / pz, 0, 1, 0, height);
+
+			stroke(255);
+			line(px, py, sx, sy);
+
 			pz = z;
 		}
 	}
-
-	void show() {
-		fill(255);
-		noStroke();
-
-		float sx = map(x / z, 0, 1, 0, width);
-		float sy = map(y / z, 0, 1, 0, height);
-
-		float r = map(z, 0, width / 2, 8, 0);
-		ellipse(sx, sy, r, r);
-
-		float px = map(x / pz, 0, 1, 0, width);
-		float py = map(y / pz, 0, 1, 0, height);
-
-		stroke(255);
-		line(px, py, sx, sy);
-
-		pz = z;
-	}
-}}
+}

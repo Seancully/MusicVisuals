@@ -51,7 +51,6 @@ public class SolarSystem extends PApplet {
 			a1.fill(0);
 			a1.ellipse(0, 0, ((r + 150) + (a1.getSmoothedAmplitude() - 500)) / 2, ((r + 150) + (smoothedAmplitude - 500)) / 2);
 
-
 			a1.pushMatrix();
 			a1.rotate(theta);
 			a1.translate(250, 0);
@@ -60,21 +59,29 @@ public class SolarSystem extends PApplet {
 
 			a1.rotate(-theta * 4);
 			a1.translate(150, 0);
+			a1.fill(212, 241, 244);
+			a1.ellipse(-40, -40, 40, 40);
 			a1.fill(24, 154, 180);
 			a1.ellipse(0, 0, 60, 60);
 
 			a1.rotate(theta * 2);
 			a1.translate(100, 0);
+			a1.fill(50, 255, 200);
+			a1.ellipse(-30, 30, 15, 15);
 			a1.fill(212, 241, 244);
 			a1.ellipse(0, 0, 30, 30);
 
 			a1.rotate(-theta * 4);
 			a1.translate(230, 0);
+			a1.fill(212, 241, 244);
+			a1.ellipse(-55, 55, 30, 30);
 			a1.fill(50, 255, 200);
 			a1.ellipse(0, 0, 45, 45);
 	
 			a1.rotate(-theta * 4);
 			a1.translate(285, 0);
+			a1.fill(212, 241, 244);
+			a1.ellipse(-65, 65, 55, 55);
 			a1.fill(117, 230, 218);
 			a1.ellipse(0, 0, 90, 90);
 
