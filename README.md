@@ -21,19 +21,19 @@ or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 
 # Screenshots of animations
 ### Eyelar Intro
-![An image](Pictures/Eyelar.png)
+![A different image](file:///C:/Users/Se%C3%A1n/OneDrive%20-%20Technological%20University%20Dublin/Pictures/Eyelar.png)
 
 ### Solar System
-![An image](Pictures/SolarSystem.png)
+![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
 
 ### Horizon Vertex
-![An image](Pictures/HorizonVertex.png)
+![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
 
 ### Eye
-![An image](Pictures/Eye.png)
+![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
 
 ### Eyelar Outro
-![An image](Pictures/End.png)
+![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
 
 # How it works
 ### Timer
