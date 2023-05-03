@@ -24,16 +24,16 @@ or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 ![A different image](https://oopassignment.files.wordpress.com/2023/05/eyelar-1.jpeg?w=1024)
 
 ### Solar System
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
+![A different image](https://oopassignment.files.wordpress.com/2023/05/solar.jpeg?w=1024)
 
 ### Horizon Vertex
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
+![A different image](https://oopassignment.files.wordpress.com/2023/05/vertex.jpeg?w=1024)
 
 ### Eye
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
+![A different image](https://oopassignment.files.wordpress.com/2023/05/eye.jpeg?w=1024)
 
 ### Eyelar Outro
-![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
+![A different image](https://oopassignment.files.wordpress.com/2023/05/outro.jpeg?w=1024)
 
 # How it works
 ### Timer
