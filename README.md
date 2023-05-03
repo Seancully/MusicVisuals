@@ -19,6 +19,22 @@ Our groups Music Visualizer compiles a montage of different visuals all inspired
 press fn + f5 and watch the code on VSC, also press spacebar and it begins.
 or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 
+# Screenshots of animations
+### Eyelar Intro
+![An image](Eyelar.png)
+
+### Solar System
+![An image](SolarSystem.png)
+
+### Horizon Vertex
+![An image](HorizonVertex.png)
+
+### Eye
+![An image](Eye.png)
+
+### Eyelar Outro
+![An image](End.png)
+
 # How it works
 ### Timer
 A timing system used throughout the program that dictates which visuals play at which time. Depending on the time set.
