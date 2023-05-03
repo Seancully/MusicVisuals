@@ -51,8 +51,20 @@ I created a solar system animation where planets rotate as if they are in space 
 - How to be creative, and work around issues by testing code repeatedly and coming up with new designs and implementing them too.
 
 ## Dave:
+### What I did:
+In this project i decided to make an intro to the video with a stars in the background to give it that space effect. I then added the title of the song on top of the background . Each few seconds at the start of the video a new letter pops up spelling out the name of the song. I added a second letter under each of the others with a different colour to make a 3D effect. I then added a welcome text with the same concept at the end of the intro. 
+### What I am most proud of:
+In this project I am most proud of all the work we got done as a group and what we achieved. 
+### What I learned: 
+In this project I learned more about java processing and how the different functions work. I also learned how to work better in a group by allocating each other different tasks to do.
 
 ## Jack:
+### WHAT I DID:
+I contributed to the project by creating the last visual in the video. I wanted to create something that looked like the vertex was starting to close because the song is coming to an end, and it acts as a nice closing for the visuals. 
+### WHAT I AM MOST PROUD OF
+What I am most proud of is that I learned how to work in a team better so I could get a better feeling on how next year in semester 2 will be when we go on our internships. 
+### WHAT I LLEARNED
+I learned how work can be delegated between the group and everyone had a task to complete. I also learned what you can really create using Java processing if you sit down for a few hours and test and edit code to create something amazing and unusual.
 
 ## John:
 
