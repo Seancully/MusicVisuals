@@ -77,7 +77,7 @@ A timing system used throughout the program that dictates which visuals play at 
 We used a background(0) to create a black background and created a star class, this star class was then used to create stars in a for loop using a speed set by smoothedAmplitude.
 
 ### Eyelar intro
-We used text that came letter by letter for eyelar using if and if else statements
+We used text that came letter by letter for eyelar using if and if else statements.
 
 ### Solar system
 We used ellipses that rotate using a theta variable and translate() to create planets that rotate around one big planet
