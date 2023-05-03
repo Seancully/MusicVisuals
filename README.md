@@ -61,8 +61,8 @@ It is similiar also to the horizon vertex, the circles were removed and it gradu
 # LIST OF CLASSES/ASSETS
 | Class/asset | Source |
 |-----------|-----------|
-| Eyelar.java | Self written and modified from [reference] (https://thecodingtrain.com/) |
-| Star.java | modified from [reference] (https://thecodingtrain.com/) |
+| Eyelar.java | Self written and modified from [reference](https://thecodingtrain.com/) |
+| Star.java | modified from [reference](https://thecodingtrain.com/) |
 | SolarSystem.java | Modified from [reference](http://learningprocessing.com/examples/chp14/example-14-16-solar-system) |
 | Eye.java | Modified From [reference](https://www.youtube.com/watch?v=xAuwouEEJss) |
 | Horizon.java| Modified From Eye.java class |
