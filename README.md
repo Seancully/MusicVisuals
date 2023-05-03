@@ -21,19 +21,19 @@ or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 
 # Screenshots of animations
 ### Eyelar Intro
-![An image](Eyelar.png)
+![An image](Pictures/Eyelar.png)
 
 ### Solar System
-![An image](SolarSystem.png)
+![An image](Pictures/SolarSystem.png)
 
 ### Horizon Vertex
-![An image](HorizonVertex.png)
+![An image](Pictures/HorizonVertex.png)
 
 ### Eye
-![An image](Eye.png)
+![An image](Pictures/Eye.png)
 
 ### Eyelar Outro
-![An image](End.png)
+![An image](Pictures/End.png)
 
 # How it works
 ### Timer
