@@ -37,15 +37,15 @@ or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 
 # Each team member or individual needs to write a paragraph or two explaining what they contributed to the project
 ## Sean:
-WHAT I DID:
+####WHAT I DID:
 I created a solar system animation where planets rotate as if they are in space rotating around a centre point. It acts as though you should feel the mood and atmosphere of the music to be quite calming. This fits the solar system animation quite well.
-WHAT IM MOST PROUD OF:
+####WHAT IM MOST PROUD OF:
 - Working together as a team to overcome obstacles and to gain a sense of what it will feel like to work in coding teams in an internship next year (hopefully).
 - How creative we became with coming up with and implementing the different visual animations with the music.
 - How well the animations worked together all being linked by a starry night and a blue pallet of colours.
 - Gaining a greater understanding of java processing systems.
 - How I learned to yse translation and also pushMatrix(0 and popMatrix() for the planets transformations.
-WHAT I LEARNED:
+####WHAT I LEARNED:
 - How to cause the planets to rotate around a centre pont using the translate() and also the rotate() method using a 'theta' variable 
 - How other functions in Java Processing work such as pushMatrix(0 and popMatrix(), also experimented with 
 - How to be creative, and work around issues by testing code repeatedly and coming up with new designs and implementing them too.
