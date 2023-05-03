@@ -36,6 +36,38 @@ or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 ### Eyelar Outro
 ![A different image](https://oopassignment.files.wordpress.com/2023/05/outro.jpeg?w=1024)
 
+# How it works
+### Timer
+A timing system used throughout the program that dictates which visuals play at which time. Depending on the time set.
+
+### Stars
+We used a background(0) to create a black background and created a star class, this star class was then used to create stars in a for loop using a speed set by smoothedAmplitude.
+
+### Eyelar intro
+We used text that came letter by letter for eyelar using if and if else statements.
+
+### Solar system
+We used ellipses that rotate using a theta variable and translate() to create planets that rotate around one big planet
+
+### Horizon Vertex
+We used vertexes to create an animation of a blue horizon as if you are speeding through the horizon. The vertexes took parameters that changed in a for loop to create the animation.
+
+### Eye
+The eye is quite similiar to the vertex, we took in different parameters for the eye that changed the animation in a for loop. Also, there were 3 stars moving in random directions that only became visible when infront of the blue in the eye.
+
+### Eyelar Outro
+It is similiar also to the horizon vertex, the circles were removed and it gradually faded to the starry night alone again then into a black screen to finish the visuals off. The horizon was also made thinner.
+
+# LIST OF CLASSES/ASSETS
+| Class/asset | Source |
+|-----------|-----------|
+| Eyelar.java | Self written and modified from [reference (https://thecodingtrain.com/) |
+| Star.java | modified from [reference (https://thecodingtrain.com/) |
+| SolarSystem.java | Modified from [reference](http://learningprocessing.com/examples/chp14/example-14-16-solar-system) |
+| Eye.java | Modified From [reference](https://www.youtube.com/watch?v=xAuwouEEJss) |
+| Horizon.java| Modified From Eye.java class |
+| EyeOutro.java | Modified From Horizon.java class|
+
 # Each team member or individual needs to write a paragraph or two explaining what they contributed to the project
 ## Sean:
 ### WHAT I DID:
@@ -69,30 +101,8 @@ I learned how work can be delegated between the group and everyone had a task to
 
 ## John:
 
-
-# How it works
-### Timer
-A timing system used throughout the program that dictates which visuals play at which time. Depending on the time set.
-
-### Stars
-We used a background(0) to create a black background and created a star class, this star class was then used to create stars in a for loop using a speed set by smoothedAmplitude.
-
-### Eyelar intro
-We used text that came letter by letter for eyelar using if and if else statements.
-
-### Solar system
-We used ellipses that rotate using a theta variable and translate() to create planets that rotate around one big planet
-
-### Horizon Vertex
-We used vertexes to create an animation of a blue horizon as if you are speeding through the horizon. The vertexes took parameters that changed in a for loop to create the animation.
-
-### Eye
-The eye is quite similiar to the vertex, we took in different parameters for the eye that changed the animation in a for loop. Also, there were 3 stars moving in random directions that only became visible when infront of the blue in the eye.
-
-### Eyelar Outro
-It is similiar also to the horizon vertex, the circles were removed and it gradually faded to the starry night alone again then into a black screen to finish the visuals off. The horizon was also made thinner.
-
-- Working together as a team to overcome obstacles and to gain a sense of what it will feel like to work in coding teams in an internship next year (hopefully).
-- How creative we became with coming up with and implementing the different visual animations with the music.
-- How well the animations worked together all being linked by a starry night and a blue pallet of colours.
-- Gaining a greater understanding of java processing systems.
+# References
+* https://thecodingtrain.com
+* http://learningprocessing.com/examples/chp14/example-14-16-solar-system
+* https://processing.org/
+* https://www.youtube.com/watch?v=xAuwouEEJss 
