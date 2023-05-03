@@ -21,7 +21,7 @@ or watch it here on Youtube: https://youtu.be/dfZdfHreKV8
 
 # Screenshots of animations
 ### Eyelar Intro
-![A different image](file:///C:/Users/Se%C3%A1n/OneDrive%20-%20Technological%20University%20Dublin/Pictures/Eyelar.png)
+![A different image](https://oopassignment.files.wordpress.com/2023/05/eyelar-1.jpeg?w=1024)
 
 ### Solar System
 ![A different image](https://bryanduggandotorg.files.wordpress.com/2019/02/infinite-forms-00045.png?w=595&h=&zoom=2)
