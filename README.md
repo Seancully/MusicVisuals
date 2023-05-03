@@ -1,4 +1,5 @@
 # Music Visualiser Project
+# CLASS GROUP: TU856/2
 
 Name: Sean Culleton
 Student Number: C21397083
